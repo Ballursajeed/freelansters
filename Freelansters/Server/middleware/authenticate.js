@@ -37,7 +37,7 @@ const Authenticate = async (req, res, next) => {
         //      }) 
         // }
            
-        const decodedToken = jwt.verify('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZiODAzNmY5MmYwZDljNjZhOTE2MTMiLCJpYXQiOjE3Mjc3NjE4Nzh9.wTfT-XgpV9Pljv5y5tL8nQkeB4F_tm59oK-s3xQlCJk','jdifajifjawiejiejtij')
+        const decodedToken = jwt.verify(token,'jdifajifjawiejiejtij')
       
         const user = await User.findById(decodedToken?._id).select("-password")
         
